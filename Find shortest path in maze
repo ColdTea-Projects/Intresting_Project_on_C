@@ -13,25 +13,14 @@ int maze[XE][YE] = { { 1,0,0,1,1,1,1,1,1,1,1,1 },
 int path[XE][YE] = { 0 };
 int trace[XE][YE] = { 0 };
 int a = 0;
+void drawTheMaze();
 void findallpath(int x, int y, int z);
 void shortestpath(int x, int y, int z);
 
 
 int main()
 {
-
-	int i, j;
-
-	printf("Maze:\n");
-
-	for (i = 0;i < XE;i++)
-	{
-		for (j = 0;j < YE;j++)
-		{
-			printf("%d ", maze[i][j]);
-		}
-		printf("\n");
-	}
+	drawTheMaze();
 
 	printf("\n");
 	if (maze[0][0] == 1)
@@ -74,6 +63,22 @@ int main()
 
 	return 0;
 }
+
+void drawTheMaze(){
+	int i, j;
+
+	printf("Maze:\n");
+
+	for (i = 0;i < XE;i++)
+	{
+		for (j = 0;j < YE;j++)
+		{
+			printf("%d ", maze[i][j]);
+		}
+		printf("\n");
+	}
+}
+
 void findallpath(int x, int y, int z)
 {      /*find escape part*/
 	if (x == XE-1 && y == YE-1)
